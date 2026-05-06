@@ -4,6 +4,8 @@
 	--muted: #666;
 	--accent1: linear-gradient(135deg, #667eea, #764ba2);
 	--text: #111;
+	--scroll-thumb: rgba(70, 76, 110, 0.4);
+	--scroll-track: rgba(20, 24, 40, 0.08);
 }
 
 [data-theme="dark"] {
@@ -11,6 +13,8 @@
 	--card: #161824;
 	--muted: #c9c9d3;
 	--text: #eef2ff;
+	--scroll-thumb: rgba(173, 188, 230, 0.35);
+	--scroll-track: rgba(255, 255, 255, 0.08);
 }
 
 * {
@@ -127,7 +131,28 @@ h1 {
 	overflow-x: auto;
 	padding-bottom: 6px;
 	scrollbar-width: thin;
+	scrollbar-color: var(--scroll-thumb) var(--scroll-track);
 	scroll-snap-type: x proximity;
+}
+
+.group-grid::-webkit-scrollbar {
+	height: 10px;
+}
+
+.group-grid::-webkit-scrollbar-track {
+	background: var(--scroll-track);
+	border-radius: 999px;
+}
+
+.group-grid::-webkit-scrollbar-thumb {
+	background: var(--scroll-thumb);
+	border-radius: 999px;
+	border: 2px solid transparent;
+	background-clip: padding-box;
+}
+
+.group-grid::-webkit-scrollbar-thumb:hover {
+	background: color-mix(in srgb, var(--scroll-thumb) 85%, var(--text));
 }
 
 .piece-card {
