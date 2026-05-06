@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Writing Portfolio Hub</title>
+	<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+	<div class="page-bg" aria-hidden="true"></div>
+
+	<div class="container">
+		<header class="site-header">
+			<a href="https://be1kna.github.io/" class="back-to-menu-btn">&larr; Back</a>
+			<div class="header-title">
+				<h1>Writing Portfolio</h1>
+				<p class="subtitle">Browse pieces grouped by type and read each one in its intended format.</p>
+			</div>
+			<button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">🌙</button>
+		</header>
+
+		<main>
+			<section id="groupsRoot" class="groups-root" aria-live="polite">
+				<p class="loading">Loading portfolio…</p>
+			</section>
+		</main>
+	</div>
+
+	<div id="readerModal" class="reader-modal" hidden aria-hidden="true">
+		<div id="readerBackdrop" class="reader-backdrop"></div>
+		<section class="reader-window" role="dialog" aria-modal="true" aria-labelledby="readerTitle">
+			<button id="closeReader" class="modal-close" aria-label="Close reader">&times;</button>
+			<div class="reader-header">
+				<div>
+					<p id="readerType" class="reader-type"></p>
+					<h2 id="readerTitle">Select a piece</h2>
+				</div>
+			</div>
+			<article id="readerContent" class="reader-content" tabindex="0"></article>
+		</section>
+	</div>
+
+	<script src="script.js"></script>
+</body>
+</html>

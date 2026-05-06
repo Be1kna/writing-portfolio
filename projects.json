@@ -1,0 +1,79 @@
+[
+    {
+        "id": "seasons",
+        "type": "poetry",
+        "title": "Seasons",
+        "filename": "seasons.md",
+        "format": "centered"
+    },
+    {
+        "id": "fit-in",
+        "type": "poetry",
+        "title": "Fit In",
+        "filename": "fit-in.md",
+        "format": "left-aligned"
+    },
+    {
+        "id": "the-best",
+        "type": "poetry",
+        "title": "The Best",
+        "filename": "the-best.md",
+        "format": "centered"
+    },
+    {
+        "id": "snowy-forest",
+        "type": "poetry",
+        "title": "Snowy Forest",
+        "filename": "snowy-forest.md",
+        "format": "left-aligned"
+    },
+    {
+        "id": "tasting",
+        "type": "poetry",
+        "title": "Tasting",
+        "filename": "tasting.md",
+        "format": "left-aligned"
+    },
+    {
+        "id": "the-monsters",
+        "type": "poetry",
+        "title": "The Monsters",
+        "filename": "the-monsters.md",
+        "format": "left-aligned"
+    },
+    {
+        "id": "the-future",
+        "type": "poetry",
+        "title": "The Future",
+        "filename": "the-future.md",
+        "format": "centered"
+    },
+    {
+        "id": "this-place",
+        "type": "poetry",
+        "title": "This Place Could Be Beautiful",
+        "filename": "this-place.md",
+        "format": "left-aligned"
+    },
+    {
+        "id": "edmarine-university",
+        "type": "fiction",
+        "title": "Edmarine University",
+        "filename": "edmarine-university.md",
+        "format": "left-aligned"
+    },
+    {
+        "id": "houses",
+        "type": "non-fiction",
+        "title": "Houses",
+        "filename": "houses.md",
+        "format": "left-aligned"
+    },
+    {
+        "id": "survive-manual",
+        "type": "non-fiction",
+        "title": "Survive Manual",
+        "filename": "survive-manual.md",
+        "format": "centered"
+    }
+]
