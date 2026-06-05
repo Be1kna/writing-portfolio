@@ -1,277 +1,195 @@
-:root {
-	--bg: #f6f7fb;
-	--card: #fff;
-	--muted: #666;
-	--accent1: linear-gradient(135deg, #667eea, #764ba2);
-	--text: #111;
-}
-
-[data-theme="dark"] {
-	--bg: #0f1220;
-	--card: #161824;
-	--muted: #c9c9d3;
-	--text: #eef2ff;
-}
-
-* {
-	box-sizing: border-box;
-}
-
-html {
+.writing-portfolio-page {
 	color-scheme: light;
 }
 
-html[data-theme="dark"] {
+.writing-portfolio-page[data-theme="dark"] {
 	color-scheme: dark;
 }
 
-body {
-	margin: 0;
-	color: var(--text);
-	min-height: 100vh;
-	background: var(--bg);
-	font-family: Inter, system-ui, Segoe UI, Roboto, Arial;
-}
-
-body.modal-open {
+.writing-portfolio-page.modal-open {
 	overflow: hidden;
 }
 
-.page-bg {
+.writing-portfolio-page .page-bg {
 	position: fixed;
 	inset: 0;
 	pointer-events: none;
-	background: linear-gradient(120deg, rgba(102, 126, 234, 0.06), transparent 35%);
+	background:
+		radial-gradient(circle at 15% 10%, rgba(255, 255, 255, 0.14), transparent 28%),
+		linear-gradient(120deg, rgba(102, 126, 234, 0.12), transparent 42%);
 }
 
-.container {
-	max-width: 1100px;
-	margin: 0 auto;
-	padding: 20px;
+.writing-portfolio-page .container {
+	max-width: 1120px;
 }
 
-.site-header {
-	display: flex;
-	gap: 16px;
-	justify-content: space-between;
-	align-items: center;
-	margin-bottom: 24px;
+.writing-portfolio-page .site-header {
+	margin-bottom: 22px;
 }
 
-.header-title {
-	flex: 1;
-	text-align: center;
+.writing-portfolio-page .header-title h1 {
+	font-size: 2rem;
+	line-height: 1.1;
 }
 
-.back-to-menu-btn {
-	display: inline-block;
-	text-decoration: none;
-	padding: 8px 12px;
-	border-radius: 8px;
-	background: var(--card);
-	box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
-	color: var(--text);
-	font-weight: 600;
-	border: 1px solid rgba(0, 0, 0, 0.08);
-	white-space: nowrap;
+.writing-portfolio-page .subtitle {
+	font-size: 1rem;
 }
 
-h1 {
-	margin: 0;
-	font-size: 1.9rem;
-}
-
-.subtitle {
-	margin: 0;
-	color: var(--muted);
-	font-size: 0.95rem;
-}
-
-.theme-toggle {
-	background: transparent;
-	border: 1px solid rgba(0, 0, 0, 0.08);
-	padding: 12px 14px;
-	border-radius: 12px;
-	cursor: pointer;
-	font-size: 1.1rem;
-	box-shadow: 0 6px 18px rgba(102, 126, 234, 0.12);
-	transition: transform 0.15s ease;
-}
-
-.theme-toggle:hover {
-	transform: scale(1.06);
-}
-
-.groups-root {
+.writing-portfolio-page .groups-root {
 	display: grid;
-	gap: 20px;
+	gap: 18px;
 }
 
-.loading {
+.writing-portfolio-page .loading {
 	margin: 10px 0;
-	color: var(--muted);
+	color: var(--header-text);
 }
 
-.type-group {
-	border: 1px solid rgba(16, 24, 40, 0.04);
-	border-radius: 20px;
+.writing-portfolio-page .type-group {
+	border: 1px solid rgba(16, 24, 40, 0.06);
+	border-radius: 18px;
 	background: var(--card);
-	box-shadow: 0 12px 36px rgba(5, 10, 25, 0.09);
-	padding: 16px;
+	box-shadow: 0 14px 34px rgba(5, 10, 25, 0.11);
+	padding: 14px;
 }
 
-.type-group h2 {
+.writing-portfolio-page .type-group h2 {
 	margin: 0 0 12px;
-	font-size: 1.2rem;
+	font-size: 1.15rem;
 	text-transform: capitalize;
 	color: var(--text);
 }
 
-.group-grid {
+.writing-portfolio-page .group-grid {
 	display: grid;
 	grid-auto-flow: column;
-	grid-auto-columns: calc((100% - 36px) / 4);
+	grid-auto-columns: calc((100% - 24px) / 3);
 	gap: 12px;
 	overflow-x: auto;
 	padding-bottom: 6px;
 	scrollbar-width: thin;
-	scrollbar-color: rgba(102, 126, 234, 0.45) rgba(0, 0, 0, 0.06);
+	scrollbar-color: rgba(102, 126, 234, 0.45) rgba(0, 0, 0, 0.08);
 	scroll-snap-type: x proximity;
 }
 
-.group-grid::-webkit-scrollbar {
-	-webkit-appearance: none;
+.writing-portfolio-page .group-grid::-webkit-scrollbar {
 	height: 9px;
 }
 
-.group-grid::-webkit-scrollbar-track {
-	background: rgba(0, 0, 0, 0.06);
-	background-color: rgba(0, 0, 0, 0.06);
+.writing-portfolio-page .group-grid::-webkit-scrollbar-track {
+	background: rgba(0, 0, 0, 0.08);
 	border-radius: 999px;
 }
 
-.group-grid::-webkit-scrollbar-thumb {
+.writing-portfolio-page .group-grid::-webkit-scrollbar-thumb {
 	background: rgba(102, 126, 234, 0.45);
-	background-color: rgba(102, 126, 234, 0.45);
 	border-radius: 999px;
-	border: 1px solid transparent;
 }
 
-.group-grid::-webkit-scrollbar-thumb:hover {
-	background: rgba(102, 126, 234, 0.65);
-}
-
-.piece-card {
-	border: 1px solid rgba(16, 24, 40, 0.04);
+.writing-portfolio-page .piece-card {
+	border: 1px solid rgba(16, 24, 40, 0.06);
 	border-radius: 14px;
 	background: var(--card);
-	padding: 16px;
+	padding: 14px;
 	display: grid;
 	gap: 12px;
 	scroll-snap-align: start;
 	min-width: 0;
-	box-shadow: 0 8px 20px rgba(5, 10, 25, 0.08);
+	box-shadow: 0 8px 22px rgba(5, 10, 25, 0.08);
 }
 
-.piece-card h3 {
+.writing-portfolio-page .piece-card h3 {
 	margin: 0;
-	font-size: 1.2rem;
+	font-size: 1.08rem;
+	line-height: 1.3;
 }
 
-.read-btn {
+.writing-portfolio-page .read-btn {
 	border: 0;
 	border-radius: 12px;
 	background: var(--accent1);
 	color: #fff;
-	padding: 14px 20px;
+	padding: 12px 16px;
 	font-weight: 600;
-	font-size: 1.08rem;
+	font-size: 0.98rem;
 	cursor: pointer;
 	box-shadow: 0 8px 18px rgba(102, 126, 234, 0.18);
 	transition: transform 0.16s ease, box-shadow 0.16s ease, filter 0.16s ease;
 }
 
-.read-btn:hover {
+.writing-portfolio-page .read-btn:hover {
 	transform: translateY(-2px);
 	box-shadow: 0 12px 24px rgba(102, 126, 234, 0.26);
 	filter: brightness(1.03);
 }
 
-.reader-modal {
+.writing-portfolio-page .reader-modal {
 	position: fixed;
 	inset: 0;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	padding: 20px;
-	z-index: 50;
+	z-index: 9999;
 }
 
-.reader-modal[hidden] {
+.writing-portfolio-page .reader-modal[hidden] {
 	display: none;
 }
 
-.reader-backdrop {
+.writing-portfolio-page .reader-backdrop {
 	position: absolute;
 	inset: 0;
-	background: rgba(20, 24, 31, 0.58);
+	background: rgba(20, 24, 31, 0.6);
+	backdrop-filter: blur(4px);
 }
 
-.reader-window {
+.writing-portfolio-page .reader-window {
 	position: relative;
 	z-index: 1;
-	width: min(860px, 100%);
-	max-height: min(88vh, 820px);
-	border: 1px solid rgba(16, 24, 40, 0.04);
+	width: min(880px, 100%);
+	max-height: min(90vh, 860px);
+	border: 1px solid rgba(16, 24, 40, 0.06);
 	background: var(--card);
-	border-radius: 22px;
-	box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+	border-radius: 20px;
+	box-shadow: 0 22px 56px rgba(0, 0, 0, 0.24);
 	overflow: hidden;
 }
 
-.reader-header {
+.writing-portfolio-page .reader-header {
 	padding: 16px 20px 12px;
 	border-bottom: 1px solid rgba(0, 0, 0, 0.08);
 }
 
-.reader-type {
+.writing-portfolio-page .reader-type {
 	margin: 0;
-	font-size: 0.82rem;
-	letter-spacing: 0.12em;
+	font-size: 0.8rem;
+	letter-spacing: 0.11em;
 	color: var(--muted);
 	text-transform: uppercase;
 }
 
-.reader-header h2 {
-	margin: 4px 0 0;
+.writing-portfolio-page .reader-header h2 {
+	margin: 5px 0 0;
+	font-size: 1.15rem;
+	padding-right: 46px;
 }
 
-
-.modal-close {
+.writing-portfolio-page .modal-close {
 	position: absolute;
 	top: 14px;
 	right: 14px;
-	border: 0;
-	background: rgba(255, 255, 255, 0.95);
-	color: var(--text);
-	border-radius: 999px;
 	width: 40px;
 	height: 40px;
-	font-size: 1.4rem;
+	border-radius: 999px;
+	font-size: 1.3rem;
 	line-height: 1;
-	cursor: pointer;
-	box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
-	transition: transform 0.16s ease, box-shadow 0.16s ease;
 }
 
-.modal-close:hover {
-	transform: translateY(-1px) scale(1.03);
-	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.18);
-}
-
-.reader-content {
+.writing-portfolio-page .reader-content {
 	min-height: 280px;
-	max-height: calc(88vh - 96px);
+	max-height: calc(90vh - 96px);
 	padding: 20px;
 	line-height: 1.8;
 	white-space: pre-wrap;
@@ -279,85 +197,72 @@ h1 {
 	overflow: auto;
 }
 
-.reader-content.format-centered {
+.writing-portfolio-page .reader-content.format-centered {
 	text-align: center;
 }
 
-.reader-content.format-left-aligned {
+.writing-portfolio-page .reader-content.format-left-aligned {
 	text-align: left;
 }
 
-.reader-content.is-loading,
-.reader-content.is-error {
+.writing-portfolio-page .reader-content.is-loading,
+.writing-portfolio-page .reader-content.is-error {
 	color: var(--muted);
 	font-style: italic;
 }
 
-[data-theme="dark"] .theme-toggle {
-	border-color: rgba(255, 255, 255, 0.08);
-}
-
-[data-theme="dark"] .back-to-menu-btn {
-	border-color: rgba(255, 255, 255, 0.08);
-}
-
-[data-theme="dark"] .group-grid {
+[data-theme="dark"] .writing-portfolio-page .group-grid {
 	scrollbar-color: rgba(139, 192, 223, 0.45) rgba(255, 255, 255, 0.08);
 }
 
-[data-theme="dark"] .group-grid::-webkit-scrollbar-track {
+[data-theme="dark"] .writing-portfolio-page .group-grid::-webkit-scrollbar-track {
 	background: rgba(255, 255, 255, 0.08);
-	background-color: rgba(255, 255, 255, 0.08);
 }
 
-[data-theme="dark"] .group-grid::-webkit-scrollbar-thumb {
+[data-theme="dark"] .writing-portfolio-page .group-grid::-webkit-scrollbar-thumb {
 	background: rgba(139, 192, 223, 0.45);
-	background-color: rgba(139, 192, 223, 0.45);
 }
 
-[data-theme="dark"] .group-grid::-webkit-scrollbar-thumb:hover {
-	background: rgba(139, 192, 223, 0.65);
-}
-
-[data-theme="dark"] .reader-header {
+[data-theme="dark"] .writing-portfolio-page .reader-header {
 	border-bottom-color: rgba(255, 255, 255, 0.08);
 }
 
-[data-theme="dark"] .modal-close {
-	background: rgba(20, 24, 36, 0.9);
-}
-
-.theme-toggle,
-.back-to-menu-btn {
-	transition: transform 0.16s ease, box-shadow 0.16s ease;
-}
-
-.theme-toggle:hover,
-.back-to-menu-btn:hover {
-	transform: translateY(-2px);
-	box-shadow: 0 10px 22px rgba(102, 126, 234, 0.18);
+@media (max-width: 900px) {
+	.writing-portfolio-page .group-grid {
+		grid-auto-columns: calc((100% - 12px) / 2);
+	}
 }
 
 @media (max-width: 640px) {
-	.site-header {
-		flex-direction: row;
-		flex-wrap: wrap;
-		align-items: stretch;
+	.writing-portfolio-page .site-header {
+		grid-template-columns: auto 1fr auto;
 	}
 
-	.header-title {
-		order: 3;
-		flex-basis: 100%;
+	.writing-portfolio-page .header-title {
+		text-align: center;
 	}
 
-	.theme-toggle {
-		align-self: flex-end;
+	.writing-portfolio-page .header-title h1 {
+		font-size: 1.7rem;
 	}
 
-	.group-grid {
+	.writing-portfolio-page .group-grid {
 		grid-auto-columns: minmax(78vw, 78vw);
 	}
 
+	.writing-portfolio-page .reader-modal {
+		padding: 10px;
+	}
+
+	.writing-portfolio-page .reader-window {
+		border-radius: 16px;
+	}
+
+	.writing-portfolio-page .reader-content {
+		padding: 16px;
+		font-size: 0.98rem;
+	}
+}
 	.reader-modal {
 		padding: 12px;
 	}
