@@ -63,6 +63,13 @@
         "format": "left-aligned"
     },
     {
+        "id": "spaceship",
+        "type": "fiction",
+        "title": "Spaceship",
+        "filename": "spaceship.md",
+        "format": "left-aligned"
+    },
+    {
         "id": "houses",
         "type": "non-fiction",
         "title": "Houses",
