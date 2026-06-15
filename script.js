@@ -49,6 +49,20 @@ function setReaderState(stateClass, text) {
 	readerContent.textContent = text;
 }
 
+function handleReaderCopy(event) {
+	const selection = window.getSelection();
+	const selectedText = selection ? selection.toString() : "";
+
+	if (!selectedText) {
+		return;
+	}
+
+	if (event.clipboardData) {
+		event.preventDefault();
+		event.clipboardData.setData("text/plain", selectedText);
+	}
+}
+
 function openReader() {
 	readerModal.hidden = false;
 	readerModal.setAttribute("aria-hidden", "false");
@@ -166,6 +180,7 @@ document.addEventListener("keydown", (event) => {
 });
 
 themeToggle.addEventListener("click", toggleTheme);
+readerContent.addEventListener("copy", handleReaderCopy);
 setTheme(getTheme());
 closeReaderModal();
 loadProjects();
